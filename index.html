@@ -1,73 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ms">
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>The Earth We Leave Behind</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satelit - Bulan</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Library Three.js untuk rendering 3D -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-
 <body>
 
-    <main class="front-page">
+  <nav>
+    <div class="logo">SPACE.EDU</div>
+    <ul class="nav-links">
+      <li><a href="#">Satelit</a></li>
+      <li><a href="#">Orbit</a></li>
+      <li><a href="#">Misi</a></li>
+    </ul>
+    <a href="#" class="btn-enroll">Daftar</a>
+  </nav>
 
-        <!-- EARTH -->
+  <div id="canvas-container"></div>
 
-        <a href="introduction.html" class="earth-link">
+  <div class="container">
+    <section>
+      <div class="subtitle">Satelit Alami Bumi</div>
+      <h1>BULAN</h1>
+      <p>
+        Bulan ialah satu-satunya satelit alami Bumi. Berada pada jarak purata kira-kira 384,400 km, daya tarikan graviti Bulan mempengaruhi pasang surut air laut dan menstabilkan kecondongan paksi Bumi.
+      </p>
+      <div class="btn-group">
+        <a href="#" class="btn-primary">KETAHUI LEBIH LANJUT</a>
+        <a href="#" class="btn-play">&#9654;</a>
+      </div>
+    </section>
+  </div>
 
-            <div class="earth">
-
-                <div class="earth-glow"></div>
-
-                <div class="earth-surface">
-
-                    <span class="land land1"></span>
-                    <span class="land land2"></span>
-                    <span class="land land3"></span>
-
-                </div>
-
-            </div>
-
-
-            <!-- TITLE OVER THE EARTH -->
-
-            <div class="earth-title">
-
-                <p>OUR PLANET • OUR FUTURE</p>
-
-                <h1>
-                    THE EARTH<br>
-                    WE LEAVE<br>
-                    BEHIND
-                </h1>
-
-                <span>
-                    CLICK TO EXPLORE
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <div class="bottom">
-
-            <span>CLIMATE CHANGE</span>
-
-            <span>2026</span>
-
-            <span>ENTER THE EXPERIENCE →</span>
-
-        </div>
-
-    </main>
-
+  <script src="script.js"></script>
 </body>
+</html>
