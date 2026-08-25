@@ -5,18 +5,18 @@
 }
 
 body {
-    background: #020604;
+    background: #020403;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
 }
 
 
 /* =========================
-   FRONT PAGE
+   HERO
 ========================= */
 
-.front-page {
+.hero {
 
     width: 100vw;
     height: 100vh;
@@ -30,30 +30,29 @@ body {
     overflow: hidden;
 
     background:
-
         radial-gradient(
-            circle at center,
-            #183d28 0%,
-            #07130d 35%,
-            #020604 75%
+            circle at 50% 48%,
+            #183326 0%,
+            #0a150f 28%,
+            #030604 65%,
+            #010202 100%
         );
 
 }
 
 
 /* =========================
-   EARTH LINK
+   ROCK CONTAINER
 ========================= */
 
-.earth-link {
+.rock-link {
 
     position: relative;
 
-    width: 620px;
-    height: 620px;
+    width: 700px;
+    height: 700px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -65,123 +64,148 @@ body {
 
 
 /* =========================
-   EARTH
+   ROCK
 ========================= */
 
-.earth {
+.rock {
 
     position: absolute;
 
-    width: 560px;
-    height: 560px;
-
-    border-radius: 50%;
-
-    overflow: hidden;
+    width: 360px;
+    height: 330px;
 
     background:
 
-        radial-gradient(
-            circle at 30% 25%,
-            #8aa38d,
-            #48634e 35%,
-            #1d3324 65%,
-            #030806 100%
+        linear-gradient(
+            135deg,
+            #59615b,
+            #303733 35%,
+            #171d19 70%,
+            #080b09
         );
 
-    box-shadow:
+    clip-path: polygon(
+        18% 12%,
+        48% 3%,
+        78% 16%,
+        96% 43%,
+        83% 77%,
+        59% 96%,
+        25% 88%,
+        6% 62%,
+        2% 35%
+    );
 
-        inset -80px -60px 120px
-        rgba(0,0,0,0.9),
+    filter:
 
-        inset 30px 20px 50px
-        rgba(190,255,200,0.15),
-
-        0 0 100px
-        rgba(80,255,130,0.25);
+        drop-shadow(
+            0 35px 35px
+            rgba(0,0,0,0.8)
+        );
 
     animation:
 
-        floating 6s ease-in-out infinite;
+        rockFloat 5s ease-in-out infinite,
 
-    transition: 0.6s;
+        rockRotate 12s ease-in-out infinite;
 
-}
-
-
-/* =========================
-   EARTH GLOW
-========================= */
-
-.earth-glow {
-
-    position: absolute;
-
-    inset: -20px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(100,255,150,0.2),
-            transparent 65%
-        );
+    transition: 0.5s;
 
 }
 
 
-/* =========================
-   EARTH SURFACE
-========================= */
+/* ROCK TEXTURE */
 
-.earth-surface {
+.rock-face {
 
     position: absolute;
 
     inset: 0;
 
-    border-radius: 50%;
-
     background:
 
         radial-gradient(
-            ellipse at 25% 30%,
-            #79967d 0%,
-            transparent 14%
-        ),
-
-        radial-gradient(
-            ellipse at 65% 25%,
-            #45664c 0%,
+            ellipse at 30% 25%,
+            rgba(160,180,165,0.35),
             transparent 18%
         ),
 
         radial-gradient(
-            ellipse at 70% 65%,
-            #607e65 0%,
-            transparent 15%
+            ellipse at 70% 35%,
+            rgba(90,110,95,0.4),
+            transparent 20%
         ),
 
         radial-gradient(
-            ellipse at 30% 75%,
-            #2b4933 0%,
-            transparent 20%
+            ellipse at 40% 70%,
+            rgba(10,15,12,0.7),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 75%,
+            rgba(100,125,105,0.2),
+            transparent 15%
         );
 
-    animation:
+}
 
-        surfaceRotate 25s linear infinite;
+
+/* ROCK LIGHT */
+
+.rock-highlight {
+
+    position: absolute;
+
+    width: 180px;
+    height: 100px;
+
+    top: 35px;
+    left: 70px;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(220,240,225,0.28),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    transform: rotate(-20deg);
+
+}
+
+
+/* ROCK SHADOW */
+
+.rock-shadow {
+
+    position: absolute;
+
+    width: 250px;
+    height: 60px;
+
+    bottom: -100px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(0,0,0,0.7);
+
+    border-radius: 50%;
+
+    filter: blur(25px);
 
 }
 
 
 /* =========================
-   TITLE OVER EARTH
+   TITLE
 ========================= */
 
-.earth-title {
+.title {
 
     position: relative;
 
@@ -191,33 +215,33 @@ body {
 
     pointer-events: none;
 
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 
 }
 
 
-/* SMALL TEXT */
+/* SMALL TITLE */
 
-.earth-title p {
+.title p {
 
     font-size: 10px;
 
     letter-spacing: 5px;
 
-    color: #b6c8bb;
+    color: #9aafa0;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
 }
 
 
 /* MAIN TITLE */
 
-.earth-title h1 {
+.title h1 {
 
-    font-size: 68px;
+    font-size: 70px;
 
-    line-height: 0.88;
+    line-height: 0.86;
 
     letter-spacing: -4px;
 
@@ -228,69 +252,76 @@ body {
     text-shadow:
 
         0 3px 20px
-        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.95),
 
         0 0 40px
-        rgba(0,0,0,0.5);
+        rgba(0,0,0,0.7);
 
 }
 
 
 /* CLICK */
 
-.earth-title span {
+.title span {
 
     display: inline-block;
 
-    margin-top: 28px;
+    margin-top: 25px;
 
-    padding: 9px 18px;
+    padding: 10px 20px;
 
     border:
 
         1px solid
-        rgba(255,255,255,0.4);
+        rgba(124,255,155,0.5);
 
     border-radius: 30px;
+
+    color: #7cff9b;
 
     font-size: 9px;
 
     letter-spacing: 3px;
 
-    color: white;
-
     background:
-        rgba(0,0,0,0.2);
+        rgba(0,0,0,0.25);
 
     backdrop-filter: blur(8px);
 
 }
 
 
-/* HOVER */
+/* =========================
+   HOVER
+========================= */
 
-.earth-link:hover .earth {
+.rock-link:hover .rock {
 
-    transform: scale(1.05);
+    transform:
+        scale(1.08)
+        rotate(-3deg);
 
-    box-shadow:
+    filter:
 
-        inset -80px -60px 120px
-        rgba(0,0,0,0.9),
+        drop-shadow(
+            0 35px 50px
+            rgba(0,0,0,0.9)
+        )
 
-        0 0 150px
-        rgba(100,255,150,0.55);
+        drop-shadow(
+            0 0 30px
+            rgba(100,255,150,0.15)
+        );
 
 }
 
 
-.earth-link:hover
-.earth-title h1 {
+.rock-link:hover .title h1 {
 
     text-shadow:
 
         0 3px 25px
-        rgba(0,0,0,0.9),
+        rgba(0,0,0,1),
 
         0 0 50px
         rgba(124,255,155,0.25);
@@ -308,14 +339,14 @@ body {
 
     bottom: 25px;
 
-    left: 5%;
-    right: 5%;
+    left: 6%;
+    right: 6%;
 
     display: flex;
 
     justify-content: space-between;
 
-    color: #526158;
+    color: #4c5b51;
 
     font-size: 8px;
 
@@ -328,31 +359,35 @@ body {
    ANIMATION
 ========================= */
 
-@keyframes floating {
+@keyframes rockFloat {
 
     0% {
-        transform: translateY(0);
+        margin-top: 0;
     }
 
     50% {
-        transform: translateY(-18px);
+        margin-top: -25px;
     }
 
     100% {
-        transform: translateY(0);
+        margin-top: 0;
     }
 
 }
 
 
-@keyframes surfaceRotate {
+@keyframes rockRotate {
 
     0% {
-        transform: scale(1.05) rotate(0deg);
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
     }
 
     100% {
-        transform: scale(1.05) rotate(360deg);
+        transform: rotate(-2deg);
     }
 
 }
@@ -364,21 +399,21 @@ body {
 
 @media (max-width: 700px) {
 
-    .earth-link {
+    .rock-link {
 
-        width: 430px;
-        height: 430px;
-
-    }
-
-    .earth {
-
-        width: 390px;
-        height: 390px;
+        width: 450px;
+        height: 500px;
 
     }
 
-    .earth-title h1 {
+    .rock {
+
+        width: 270px;
+        height: 250px;
+
+    }
+
+    .title h1 {
 
         font-size: 45px;
 
@@ -386,7 +421,7 @@ body {
 
     }
 
-    .earth-title p {
+    .title p {
 
         font-size: 8px;
 
